@@ -5,12 +5,12 @@ const { Header, Content, Footer } = Layout;
 
 const items = [
   {
-    label: '苏宁易购热销数据',
+    label: '苏宁易购热销数据分析',
     key: 'suningSale',
   },
   {
-    label: '淘宝首页数据',
-    key: 'taobao'
+    label: '淘宝首页推荐数据分析',
+    key: 'recommend'
   },
   {
     label: '商家地区分布',
@@ -21,7 +21,7 @@ const items = [
 const Home = () => {
   const navigate = useNavigate()
   return (
-    <Layout className="home" style={{ backgroundColor: '#f1f2f9', height: '150vh' }}>
+    <Layout className="home" style={{ backgroundColor: '#f1f2f9', height: '130vh' }}>
       <Header
         style={{
           display: 'flex',
@@ -32,10 +32,10 @@ const Home = () => {
         }}
       >
         <div className="demo-logo" />
-        {/* <h1 style={{ color: '#0062FF', fontSize: '20px', fontWeight: '600', marginRight: '24px' }}>电商大数据可视化系统</h1> */}
+        <h1 style={{ color: '#0062FF', fontSize: '20px', fontWeight: '600', marginRight: '24px' }}>电商大数据可视化系统</h1>
         <Menu
           mode="horizontal"
-          defaultSelectedKeys={['sale']}
+          defaultSelectedKeys={['sunningSale']}
           items={items}
           style={{
             flex: 1,

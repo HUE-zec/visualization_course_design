@@ -3,12 +3,15 @@ import BarChart from '../../components/barChart'
 import { Tabs } from 'antd';
 import Phone from './phone';
 import Computer from './computer';
+import Nvzhuang from './nvzhuang';
+import Food from './food'
+import PriceRangeChart from './PriceRangeChart';
 
 export default function Sale () {
   const items = [
     {
       key: 'phone',
-      label: '手机销量统计',
+      label: '手机',
       children: <Phone />,
     },
     {
@@ -17,16 +20,25 @@ export default function Sale () {
       children: <Computer />
     },
     {
-      key: '3',
-      label: 'Tab 3',
-      children: 'Content of Tab Pane 3',
+      key: 'nvzhuang',
+      label: '女装',
+      children: <Nvzhuang />,
     },
+    {
+      key: 'food',
+      label: '食品',
+      children: <Food />
+    },
+    {
+      key: 'priceRange',
+      label: '热销商品价格带',
+      children: <PriceRangeChart />
+    }
   ];
   const onChange = () => { }
   return (
     <div style={{ minHeight: '400px' }}>
-      <Tabs defaultActiveKey="1" items={items} onChange={onChange} />;
-
+      <Tabs defaultActiveKey="1" items={items} onChange={onChange} />
     </div>
   )
 }

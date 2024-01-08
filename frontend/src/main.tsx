@@ -4,6 +4,8 @@ import App from './App.tsx'
 import { createBrowserRouter, RouterProvider, Navigate } from "react-router-dom";
 import Home from './pages/home'
 import Sale from './pages/sale'
+import Recommend from './pages/recommend'
+import Location from './pages/location'
 import './index.css'
 
 const router = createBrowserRouter([
@@ -18,6 +20,14 @@ const router = createBrowserRouter([
       {
         path: 'suningSale',
         element: <Sale />
+      },
+      {
+        path: 'recommend',
+        element: <Recommend />
+      },
+      {
+        path: 'location',
+        element: <Location />
       }
     ]
   },

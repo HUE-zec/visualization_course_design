@@ -14,4 +14,14 @@ export default defineConfig({
   //     }
   //   }
   // }
+  build:{
+    rollupOptions:{
+        external: ['BMap'],
+        plugins: [
+            externalGlobals({
+                BMap: 'BMap',
+            }),
+        ],
+    }
+  }
 })

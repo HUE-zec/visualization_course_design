@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react';
 import * as echarts from 'echarts';
-import { getNvzhuangTopListApi } from '../../api';
 
-const NvzhuangSalesChart = ({ data }) => {
+const PhoneSalesChart = ({ data }) => {
   useEffect(() => {
-    const chartDom = document.getElementById('nvzhuangSalesChart');
+    const chartDom = document.getElementById('phoneSalesChart');
     const myChart = echarts.init(chartDom);
 
     const myColor = ['#eb2100', '#eb3600', '#d0570e', '#d0a00e', '#34da62', '#00e9db', '#00c0e9', '#0096f3', '#33CCFF', '#33FFCC'];
@@ -30,7 +29,7 @@ const NvzhuangSalesChart = ({ data }) => {
             fontSize: '16',
           }
         },
-        data: data.map(item => item['标题'].slice(0, 20) + '...')
+        data: data.map(item => item['标题'].slice(0, 40) + '...')
       }, {
         axisTick: 'none',
         axisLine: 'none',
@@ -42,7 +41,7 @@ const NvzhuangSalesChart = ({ data }) => {
         },
         data: ['10', '9', '8', '7', '6', '5', '4', '3', '2', '1']
       }, {
-        name: '女装销量TOP 10',
+        name: '手机销量TOP 10',
         nameGap: '50',
         nameTextStyle: {
           color: '#ffffff',
@@ -136,18 +135,7 @@ const NvzhuangSalesChart = ({ data }) => {
     myChart.setOption(option);
   }, [data]);
 
-  return <div id="nvzhuangSalesChart" style={{ width: '100%', height: 600 }} />;
+  return <div id="phoneSalesChart" style={{ width: '100%', height: 600 }} />;
 };
 
-export default function Nvzhuang () {
-  const [data, setData] = useState([])
-  useEffect(() => {
-    getNvzhuangTopListApi().then(res => {
-      console.log(res.data)
-      setData(res.data)
-    })
-  }, [])
-  return (
-    <NvzhuangSalesChart data={data} />
-  )
-}
+export default PhoneSalesChart;
