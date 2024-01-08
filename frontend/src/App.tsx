@@ -1,0 +1,16 @@
+import './App.css'
+import ConfigProvider from 'antd'
+import Home from './pages/home'
+
+function App() {
+
+  return (
+    <>
+        <div>
+          <Home />
+        </div>
+    </>
+  )
+}
+
+export default App
