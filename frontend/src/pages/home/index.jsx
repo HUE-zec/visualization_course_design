@@ -32,7 +32,7 @@ const Home = () => {
         }}
       >
         <div className="demo-logo" />
-        <h1 style={{ color: '#0062FF', fontSize: '20px', fontWeight: '600', marginRight: '24px' }}>电商大数据可视化系统</h1>
+        {/* <h1 style={{ color: '#0062FF', fontSize: '20px', fontWeight: '600', marginRight: '24px' }}>电商大数据可视化系统</h1> */}
         <Menu
           mode="horizontal"
           defaultSelectedKeys={['sale']}

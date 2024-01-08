@@ -1,18 +1,20 @@
 import React from 'react'
 import BarChart from '../../components/barChart'
 import { Tabs } from 'antd';
+import Phone from './phone';
+import Computer from './computer';
 
 export default function Sale () {
   const items = [
     {
       key: 'phone',
-      label: '销量统计',
-      children: <BarChart />,
+      label: '手机销量统计',
+      children: <Phone />,
     },
     {
-      key: '2',
-      label: 'Tab 2',
-      children: 'Content of Tab Pane 2',
+      key: 'computer',
+      label: '电脑',
+      children: <Computer />
     },
     {
       key: '3',
